@@ -1,0 +1,25 @@
+{
+  "cost_breakdown": {
+    "raw_material_cost_cny": 3.55,
+    "packaging_cost_cny": 0.8,
+    "total_hard_cost_cny": 4.35
+  },
+  "offline_pricing": {
+    "target_gross_margin_pct": 73.0,
+    "suggested_offline_price_cny": 16.1,
+    "gross_profit_per_cup_cny": 11.75
+  },
+  "delivery_platform_pricing": {
+    "platform_commission_pct": 20.0,
+    "coupon_discount_per_cup_cny": 5.0,
+    "merchant_delivery_subsidy_cny": 2.0,
+    "suggested_listed_price_cny": 27.6,
+    "actual_customer_paid_cny": 22.6,
+    "merchant_net_profit_per_cup_cny": 11.75
+  },
+  "daily_profit_projection": {
+    "50_cups_daily_profit_cny": 587.5,
+    "100_cups_daily_profit_cny": 1175.0,
+    "monthly_100_cups_profit_cny": 35250.0
+  }
+}

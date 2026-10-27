@@ -1,88 +1,67 @@
 ---
 name: tea-coffee-master
-description: "商用与专业级奶茶、果茶、咖啡研发与制作大师。提供万能茶底/浓缩萃取SOP、爆款爆单配方（鲜奶茶、生椰拿铁、果咖、雪顶奶盖）、单杯成本毛利精算、吧台出杯标准化流程、设备原料选型与外卖营销文案，赋能饮品店创业、摆摊及外卖副业变现。"
+description: "商用与专业级奶茶、果茶、咖啡研发与制作大师 v2.0。内置可执行CLI精算与批量缩放引擎(scripts/beverage_engine.py)、24+爆款连锁结构化配方库(data/beverages_db.json)与交互式吧台SOP/外卖防亏本精算HTML生成器。全面赋能饮品店创业、夜市摆摊及WorkBuddy付费咨询变现。"
 ---
 
-# 饮品大师：商用奶茶与咖啡研发制作全能指南 (Tea & Coffee Master)
+# 饮品大师：商用配方缩放引擎 + BOM毛利精算器 + 吧台交互式SOP系统 (Tea & Coffee Master v2.0)
 
-本 Skill 定位为**商业级饮品研发总监 + 爆款开店/摆摊实战顾问**。针对个人副业、地摊经济、独立咖啡馆、新中式茶饮店及外卖工作室，提供**精确到克（g）、毫升（ml）、秒（s）与水温（℃）**的高标准研发配方、单杯成本精算与标准化出品流程（SOP）。
+本 Skill 是集**可执行 CLI 精算脚本 (`scripts/`) + 24款主流连锁爆品结构化数据库 (`data/`) + 离线可打印吧台 SOP 网页系统 (`examples/`) + 5大商用开店百科 (`references/`)**于一体的工业级智能体技能。
 
----
-
-## 核心指导原则
-
-1. **商业落地优先（Commercial-Grade）**：
-   - 拒绝模糊用词（如“少许”、“适量”）。所有配方必须明确标注原料克重、水温、冰量、糖度比例、萃取时长。
-   - 所有配方兼顾**出品效率、口感稳定性与防化冰分层控制**。
-2. **成本毛利精算（Profit-Oriented）**：
-   - 饮品要挣钱，毛利率是生命线。默认按**65%~75%**健康商用毛利核算，单杯需列出 BOM 原料成本与包材成本。
-3. **出杯标准化（SOP & Consistency）**：
-   - 拆解吧台动线：加料 -> 加冰 -> 加糖 -> 加乳品/果汁 -> 冲茶汤/咖啡 -> 雪克/搅匀 -> 封口装饰。
-4. **原料供应链与平替思维（Smart Sourcing）**：
-   - 推荐主流品牌（菲诺、味全、Oatly、广村等）的同时，提供高性价比平替方案，降低初创者试错门槛。
+当前 `SKILL.md` 所在目录记为 `<skill-root>`。
 
 ---
 
-## 用户交互与响应工作流
+## 一、 核心可执行工具链 (Executable CLI Engine)
 
-当用户询问有关奶茶、果茶、咖啡制作、开店配方或饮品变现时，按以下工作流提供标准交付方案：
+当用户需要查询饮品配方、将单杯配方放大为 700ml 大桶杯或夜市摆摊 50~100 杯批量备料、测算单杯 BOM 成本与美团/饿了么外卖防亏本满减定价、或导出可贴墙打印的吧台 SOP 卡时，**优先调用内置 CLI 引擎**：
 
-```mermaid
-flowchart TD
-    A[用户提出饮品/配方/经营需求] --> B{需求类型判断}
-    B -- 具体单品制作 --> C[输出标准商用配方 + 制作SOP + 冷热双版 + 控糖指南]
-    B -- 成本与开店定价 --> D[拆解单杯BOM成本 + 建议定价 + 外卖满减空间]
-    B -- 菜单研发与整套方案 --> E[搭配爆款金字塔菜单: 引流款+利润款+季节限定]
-    B -- 设备与原料选型 --> F[给出预算级设备推荐 + 原料供应链与平替]
-    C & D & E & F --> G[附赠: 爆单外卖命名 + 感官风味文案]
+### 1. 检索结构化商用饮品库 (`search`)
+支持按分类（`light_milk_tea` 轻乳茶 / `classic_milk_tea` 厚乳雪顶 / `lemon_fruit_tea` 暴打柠檬与果茶 / `specialty_coffee` 特调果咖乳咖 / `base_topping` 茶底批量萃取与小料）、关键词或最高 BOM 成本检索：
+```bash
+python <skill-root>/scripts/beverage_engine.py search --category all --keyword "椰"
+python <skill-root>/scripts/beverage_engine.py search --category lemon_fruit_tea --max-cost 3.5
 ```
 
----
-
-## 标准配方交付模板 (单品输出规范)
-
-每次向用户提供具体饮品配方时，统一遵循以下高价值商业交付结构：
-
-```markdown
-### ☕/🧋 [单品名称]（如：山茶花燕麦轻乳茶 / 生椰Dirty）
-> **定位**：[引流款 / 核心利润款 / 拍照打卡款]  
-> **风味特征**：前调 [花香/果酸] -> 中调 [醇厚乳香] -> 尾韵 [高山回甘]
-
-#### 1. 标准物料配比（标准杯 500ml 冰饮版 / 400ml 热饮版）
-| 原料类别 | 原料名称 | 推荐规格/品牌 | 冰饮用量 (500ml) | 热饮用量 (400ml) |
-| :--- | :--- | :--- | :--- | :--- |
-| **茶底/咖啡** | ... | ... | ... g/ml | ... g/ml |
-| **乳基底** | ... | ... | ... g/ml | ... g/ml |
-| **糖度基准** | 黄金果糖/冰糖糖浆 | ... | 标糖/7分/半糖 | 标糖/半糖 |
-| **辅料/风味** | ... | ... | ... g | ... g |
-| **小料(选配)** | ... | ... | ... g | ... g |
-| **冰量/温水量** | 机制食用冰块/直饮温水 | ... | 满杯/约150g | 补足刻度 |
-
-#### 2. 详细制作 SOP (分步毫秒级流程)
-1. **备料打底**：雪克杯/客用杯底部加入小料与风味糖浆...
-2. **调和乳茶/果汁**：量杯注入基底乳品与茶汤...
-3. **冰温调谐**：加入冰块至特定刻度，雪克摇匀 8~10 次使液温瞬间骤降至 4℃...
-4. **出杯与造型**：倒入杯中，沿杯壁淋入浓缩咖啡形成分层/挤上雪顶喷射奶油...
-
-#### 3. 成本与毛利测算 (单杯经济学)
-- **原料成本 (BOM)**：茶/咖啡约 ¥X.XX + 乳品约 ¥X.XX + 辅料约 ¥X.XX = **¥A.AA**
-- **包材耗材成本**：高透杯+杯盖+吸管+打包袋+杯套+封口膜 = **¥B.BB**
-- **综合硬成本**：¥(A + B)
-- **建议售价**：线下堂食/自提 **¥XX** (毛利率 YY%)；外卖挂牌价 **¥ZZ** (预留补贴空间)
-
-#### 4. 避坑与品控贴士 (Pro Tips)
-- **防分层/防水析**：...
-- **保质期预警**：开封常温存留时长与冷藏标准...
+### 2. 单杯规格转换与摆摊批量备料缩放 (`scale`)
+支持一键切换 `500` (500ml中杯) 与 `700` (700ml大桶杯)，并支持按 `--cups N`（如出摊备料 50 杯）自动换算所有茶底、鲜奶、果糖克重以及整批总成本、总营收与总毛利：
+```bash
+python <skill-root>/scripts/beverage_engine.py scale --id tea_05 --cup-size 700 --cups 50
+python <skill-root>/scripts/beverage_engine.py scale --id cof_01 --cup-size 500 --cups 20 --output batch_coconut_latte.json
 ```
 
+### 3. 单杯 BOM 成本与美团/饿了么外卖防亏本定价模拟器 (`cost-sim`)
+输入液体小料成本、包材成本、目标毛利率（默认73%）、外卖平台扣点（20%）及满减分摊金额，自动反推堂食定价、外卖防亏挂牌价与月度毛利预测：
+```bash
+python <skill-root>/scripts/beverage_engine.py cost-sim --raw-cost 3.55 --pkg-cost 0.80 --target-margin 73 --platform-fee 20 --coupon-subsidy 5.0
+```
+
+### 4. 一键渲染交互式吧台 SOP 卡与毛利精算 Web 系统 (`render-html`)
+生成可离线在浏览器打开、内置外卖防亏计算器、500ml/700ml 规格切换、1~100 杯备料滑块与**一键打印贴墙吧台 SOP 卡 (PDF)** 的独立前端系统：
+```bash
+python <skill-root>/scripts/beverage_engine.py render-html --title "2026夏季爆单饮品吧台标准出品SOP" --output ./barista_sop_portal.html
+```
+- 预渲染演示成品：[`examples/beverage_interactive_portal.html`](./examples/beverage_interactive_portal.html)
+
 ---
 
-## 核心资料索引 (References)
+## 二、 技能目录架构
 
-深入配方与商业文档，请查阅配套参考库：
-
-- 🧋 **奶茶与鲜果茶商用配方库 (含4大核心茶汤标准萃取SOP)**：[tea_recipes_sop.md](./references/tea_recipes_sop.md)
-- ☕ **精品咖啡与流行特调配方库 (意式浓缩+果咖+生椰+Dirty标准)**：[coffee_recipes_sop.md](./references/coffee_recipes_sop.md)
-- 💰 **单杯成本毛利精算表与定价模型 (赚钱核心核算指南)**：[cost_calculator.md](./references/cost_calculator.md)
-- 🛠️ **原料供应链与设备选型清单 (大牌供应链+高性价比平替方案)**：[equipment_and_supply.md](./references/equipment_and_supply.md)
-- 📈 **爆款菜单设计与外卖风味营销文案库 (吸引客户下单的文案法)**：[marketing_and_menu.md](./references/marketing_and_menu.md)
+```text
+<skill-root>/
+├── SKILL.md                               # 核心指令与 CLI 调度规范
+├── scripts/
+│   └── beverage_engine.py                 # 多子命令 CLI 引擎 (search / scale / cost-sim / render-html)
+├── data/
+│   ├── beverages_db.json                  # 24 款连锁爆品结构化商用数据库 (含BOM成本/糖度梯度/冷热转换)
+│   ├── generate_beverage_db.py            # 基础数据库生成脚本
+│   └── append_beverages.py                # 扩展爆款数据库脚本
+├── examples/
+│   ├── beverage_interactive_portal.html   # 可直接浏览器打开的吧台交互式SOP与毛利精算系统
+│   └── sample_cost_simulation.json        # 外卖防亏定价测算JSON样例
+└── references/                            # 5 大商用开店深层手册
+    ├── tea_recipes_sop.md                 # 4大商用茶汤工业萃取参数、轻乳茶、柠檬茶与黑糖珍珠奶盖SOP
+    ├── coffee_recipes_sop.md              # 9Bar意式浓缩校磨纠偏、生椰拿铁、冰博克Dirty与批量冷萃SOP
+    ├── cost_calculator.md                 # 单杯BOM拆解表、73%毛利定价公式与外卖20%扣点满减倒推模型
+    ├── equipment_and_supply.md            # 3000元摆摊/2.5万档口设备清单与菲诺/Oatly/塞尚大牌同厂平替
+    └── marketing_and_menu.md              # 2-5-2-1金字塔菜单架构、外卖高转化命名法与私域复购裂变
+```
