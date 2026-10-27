@@ -1,116 +1,101 @@
-# 🧋 饮品大师 (Tea & Coffee Master Skill)
+# 🧋☕ Tea & Coffee Master Pro v3.0 — 商用茶饮与精品咖啡研发 Agent Skill（动态联网拆解 · BOM组装 · 降本极速优化闭环）
 
-> **商用与专业级奶茶、鲜果茶、精品咖啡研发与制作全能 Skill**  
-> 专为 **Gemini、Codex、Claude Code、WorkBuddy、OpenDevin** 等 AI 智能体打造的商业级饮品研发与变现实战技能。
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-v3.0_Dynamic_Loop-purple.svg)](https://github.com/BugMaker123/tea-coffee-master)
+[![Formulas](https://img.shields.io/badge/Commercial_Formulas-25%2B_Auto--Growing-green.svg)](./data/beverages_db.json)
+[![Live Fetch](https://img.shields.io/badge/Live_Teardown-Toutiao%20%7C%20Wikipedia-blue.svg)](./scripts/beverage_engine.py)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/AI_Agents-Gemini_|_Codex_|_Claude_|_WorkBuddy-orange.svg)](#一键安装与使用指南)
+**`tea-coffee-master` v3.0** 是一套专为 **WorkBuddy、Gemini CLI / Antigravity、OpenAI Codex、Claude Code** 打造的**工业级动态茶饮与咖啡研发顾问技能包**。
 
----
-
-## 🌟 核心特色与商业价值
-
-普通菜谱 AI 只能输出模糊的家庭配方（“适量”、“少许”），无法用于商业开店或摆摊。**本 Skill 定位为 20 年经验的饮品研发总监 + 爆款开店实战顾问**：
-
-1. **精准毫米级商用配方**：精确到克（g）、毫升（ml）、秒（s）、水温（℃）。
-2. **4 大商用茶汤工业级萃取**：茉莉绿茶、鸭屎香乌龙、阿萨姆红茶、四季春的茶水比、焖泡温控与防涩急速锁香。
-3. **爆款网红单品全覆盖**：伯牙绝弦同款茉莉轻乳茶、暴打鸭屎香柠檬茶（700ml）、菲诺生椰拿铁、冰博克 Dirty、多肉葡萄冻冻、芝士海盐奶盖与慢熬黑糖珍珠。
-4. **单杯 BOM 成本与毛利精算**：包含液体、小料、包材（高透杯/盖/吸管/袋）综合成本拆解，锁定 **68%~78% 线下毛利率**，附带外卖平台防亏本倒推公式。
-5. **供应链大牌平替**：菲诺、Oatly、塞尚厚乳的性价比大宗平替清单，成本直降 30%~40%。
-6. **轻启动设备清单**：3000元摆摊极简版、2.5万元档口外卖版、6万元精品综合店。
-7. **爆款营销与外卖文案**：2-5-2-1 菜单金字塔结构，感官风味雷达文案与高转化外卖命名法。
+不同于静态文档型 Skill，**v3.0 核心构建了「全网实时拆解连锁新品 -> 500ml/700ml 商用克重与 BOM 成本组装 -> 供应链降本/低卡/摆摊极速优化 -> 数据库自进化沉淀 -> 交互式吧台 SOP 交付」的完整商业闭环**：
+- 🌐 **实时联网拆解当季新品 (`live-fetch`)**：无论霸王茶姬、喜茶、古茗、瑞幸刚推出什么当季新品（如“霸王茶姬 晴山栖谷”），CLI 引擎可直接联网抓取全网同行拆解帖，自动识别核心茶底（如皖西黄大茶、玄米）、乳基底与配比。
+- 💰 **模糊配料自动清洗与商用 BOM 组装 (`assemble`)**：自动将网上的 `"牛奶半杯、果糖两泵、冰块适量"` 转化为精准 500ml 商用 `ml`/`g`，并基于内置 **35 种茶饮原料成本矩阵** 自动算出单杯原料成本、包材成本、建议零售价与毛利率（%）。
+- 🚀 **三维商业目标优化 (`optimize`)**：支持一键对任意饮品执行 **`profit-boost`（高毛利供应链同厂平替降本，单杯降本 25%-32%）**、**`low-calorie`（0卡代糖与脱脂冷打发奶沫改造）** 与 **`stall-speed`（夜市摆摊 5L 保温桶预调母液动线重构，12 秒极速出杯）**。
+- 💾 **配方库自进化 (`--save-to-db`)**：每次联网拆解或优化的新饮品可自动写回 `data/beverages_db.json` 并一键重新渲染交互式吧台 SOP 网页系统，越用越值钱！
 
 ---
 
-## 📦 项目目录结构
+## 📦 仓库完整目录结构
 
 ```text
 tea-coffee-master/
-├── SKILL.md                          # 智能体核心技能入口 (包含YAML元数据与执行工作流)
-├── README.md                         # 详细中英文安装与使用说明
-├── WORKBUDDY_SETUP_GUIDE.md          # 针对 WorkBuddy / Dify 等平台的变现与配置指南
-├── install.ps1                       # Windows 一键自动安装脚本
-├── install.sh                        # macOS / Linux 一键自动安装脚本
-└── references/                       # 5 大商用级专业参考知识库
-    ├── tea_recipes_sop.md            # 奶茶与鲜果茶商用配方与出品 SOP
-    ├── coffee_recipes_sop.md         # 经典意式与商业特调果咖配方 SOP
-    ├── cost_calculator.md            # 单杯 BOM 成本精算表与商业定价模型
-    ├── equipment_and_supply.md       # 设备采购清单与原料大牌平替供应链
-    └── marketing_and_menu.md         # 爆款菜单设计、外卖命名法与营销文案
+├── SKILL.md                                     # Agent 核心触发指令与五步动态商业闭环规范
+├── README.md                                    # 多智能体安装指南与 v3.0 动态引擎说明
+├── scripts/
+│   ├── beverage_engine.py                       # 【核心引擎 v3.0】8大子命令：auto-pipeline / live-fetch / assemble / optimize / margin / scale / search / render-html
+│   └── generate_beverage_db.py                  # 结构化饮品数据库初始化构建器
+├── data/
+│   └── beverages_db.json                        # 结构化爆品配方数据库（内置25+款基准爆品，支持联网自动扩充）
+├── references/                                  # 5大商用模块深度SOP参考手册
+│   ├── 01_base_preparation_sop.md               # 七大茶底冲泡参数、急速冰镇锁香、糖浆/珍珠/奶盖/冻类熬制SOP
+│   ├── 02_milk_and_fruit_tea_formulas.md        # 原叶轻乳茶、爆款水果茶、暴打柠檬茶、手作芋泥麻薯精准配方库
+│   ├── 03_coffee_and_specialty_formulas.md      # 意式浓缩校准、经典奶咖与果咖特调（生椰/橙C/话梅/Dirty）配方库
+│   ├── 04_cost_margin_and_equipment.md          # 摆摊vs开店设备清单、BOM成本核算与美团/饿了么防亏本定价模型
+│   └── 05_workbuddy_monetization_playbook.md    # WorkBuddy/小红书/咸鱼商业变现全案（定价阶梯、引流文案、交付物规范）
+└── examples/
+    ├── beverage_interactive_portal.html         # 【可直接交付客户】独立离线交互式吧台SOP、批量备料与外卖毛利精算系统
+    └── auto_pipeline_drink_demo.json            # v3.0 一键联网拆解「霸王茶姬 晴山栖谷」->BOM组装->高毛利平替实测输出
 ```
 
 ---
 
-## 🚀 一键安装与使用指南 (Installation)
+## ⚡ CLI 引擎 8 大子命令快速实战 (`scripts/beverage_engine.py`)
 
-### 1. 在 Gemini / Antigravity 中安装
+零第三方依赖（基于 Python 3 标准库），开箱即用：
 
-#### 方式 A：一键命令行自动安装
+```bash
+# 1. 【王牌功能】一键全自动闭环：联网拆解连锁新品 -> 提取茶底乳品组装BOM -> 供应链降本优化 -> 写入数据库
+python scripts/beverage_engine.py auto-pipeline \
+  --query "霸王茶姬 晴山栖谷" \
+  --category light_milk_tea \
+  --optimize-mode profit-boost \
+  --save-to-db \
+  --output examples/auto_pipeline_drink_demo.json
 
-**Windows (PowerShell)**:
-```powershell
-irm https://raw.githubusercontent.com/BugMaker123/tea-coffee-master/main/install.ps1 | iex
+# 2. 独立联网搜索全网连锁新品配方拆解 (Toutiao SSR + Wikipedia ZH)
+python scripts/beverage_engine.py live-fetch --query "喜茶 三倍厚抹"
+
+# 3. 模糊饮品配料 -> 500ml 商用精准克重(ml/g) + BOM成本与毛利率组装器
+python scripts/beverage_engine.py assemble \
+  --name "桂花酒酿冰美式" \
+  --category specialty_coffee \
+  --flavor "清甜桂花酒酿碰撞中深烘意式浓缩" \
+  --ingredients "孝感米酒酿 60g, 桂花糖浆两泵, 纯净水 150ml, 机制方冰 150g, 意式浓缩两份" \
+  --save-to-db
+
+# 4. 三维商业目标优化 (支持 profit-boost | low-calorie | stall-speed)
+python scripts/beverage_engine.py optimize --id "生椰拿铁" --mode profit-boost --save-to-db
+python scripts/beverage_engine.py optimize --id "伯牙绝弦" --mode stall-speed --save-to-db
+
+# 5. 门店与外卖平台（美团/饿了么扣点）防亏本净利与回本周期精算
+python scripts/beverage_engine.py margin --id "伯牙绝弦" --price 15.0 --platform-fee 0.22 --daily-cups 150 --monthly-rent 6000 --monthly-labor 8000
+
+# 6. 早班备料与夜市摆摊批量缩放 (如放大至 80 杯 700ml 大杯)
+python scripts/beverage_engine.py scale --id "手打渣男暴打柠檬茶" --cups 80 --size-ml 700
+
+# 7. 检索饮品配方数据库
+python scripts/beverage_engine.py search --category fruit_tea --keyword "柠檬"
+
+# 8. 重新渲染客户级交互式吧台 SOP 与外卖防亏本精算门户
+python scripts/beverage_engine.py render-html --output examples/beverage_interactive_portal.html
 ```
 
-**macOS / Linux (Bash)**:
-```bash
-curl -fsSL https://raw.githubusercontent.com/BugMaker123/tea-coffee-master/main/install.sh | bash
-```
+---
 
-#### 方式 B：手动 Git Clone
-将本仓库克隆至你的 Gemini / Antigravity skills 目录：
-```bash
-# Windows
-git clone https://github.com/BugMaker123/tea-coffee-master.git "$env:USERPROFILE\.gemini\config\skills\tea-coffee-master"
+## 🛠️ 在各大智能体中安装使用
 
-# macOS / Linux
+### 1. Gemini CLI / Antigravity
+```bash
 git clone https://github.com/BugMaker123/tea-coffee-master.git ~/.gemini/config/skills/tea-coffee-master
 ```
-
----
-
-### 2. 在 Codex / ChatGPT / OpenAI Custom GPTs 中使用
-
-1. 打开 [OpenAI Custom GPTs](https://chat.openai.com/gpts/editor) 或 Codex 控制台。
-2. 在 **Instructions (系统提示词)** 中：直接复制粘贴本仓库中的 [`SKILL.md`](./SKILL.md) 全文。
-3. 在 **Knowledge (知识库文件)** 中：将 `references/` 目录下的 5 份 `.md` 文件打包或逐个上传：
-   - `tea_recipes_sop.md`
-   - `coffee_recipes_sop.md`
-   - `cost_calculator.md`
-   - `equipment_and_supply.md`
-   - `marketing_and_menu.md`
-4. 发布即可获得顶级的“饮品研发与商业化专家”。
-
----
-
-### 3. 在 WorkBuddy / Dify / 微信智能体中配置
-
-详细图文操作与三大变现赚钱玩法，请查阅专属指南：
-👉 [**WorkBuddy 部署与赚钱变现全攻略**](./WORKBUDDY_SETUP_GUIDE.md)
-
----
-
-### 4. 在 Claude Code / Cursor / OpenDevin 中使用
-
-直接在项目中将本仓库作为子模块或文件夹引入：
-```bash
-git submodule add https://github.com/BugMaker123/tea-coffee-master.git .skills/tea-coffee-master
+*(Windows PowerShell)*:
+```powershell
+git clone https://github.com/BugMaker123/tea-coffee-master.git "$HOME\.gemini\config\skills\tea-coffee-master"
 ```
-并在 Prompt 或系统指令中引入 `.skills/tea-coffee-master/SKILL.md`。
 
----
+### 2. OpenAI Codex CLI / Claude Code
+```bash
+git clone https://github.com/BugMaker123/tea-coffee-master.git ~/.codex/skills/tea-coffee-master
+```
 
-## 💡 典型使用示例 (Prompt Examples)
-
-安装完成后，你可以向智能体提问：
-
-- 💬 *"请给我一份【生椰拿铁 + 暴打鸭屎香柠檬茶】的详细商用配方、操作SOP与单杯硬成本测算。"*
-- 💬 *"我准备在大学城夜市摆摊，手头预算只有 5000 元，请给我一套高性价比设备采购清单和平替原料推荐。"*
-- 💬 *"我要在美团上线 8 款饮品，请帮我设计 2-5-2-1 爆款菜单架构，并写出能保证 75% 毛利的满减定价方案。"*
-- 💬 *"请为我的新品「茉莉初雪轻乳茶」写一组适合发朋友圈和小红书的高颜值感官风味文案。"*
-
----
-
-## 📄 许可证 (License)
-
-本项目采用 [MIT 许可证](LICENSE)。欢迎个人使用、开店实操与商业化定制！
+### 3. WorkBuddy
+将本仓库导入 WorkBuddy 技能库，将 `SKILL.md` 设为系统指令，并挂载 `scripts/`、`data/` 与 `references/`，即可接单交付 **连锁新品1:1商用复刻、夜市摆摊极速菜单定制、外卖防亏本成本核算表与交互式吧台 SOP 系统**。

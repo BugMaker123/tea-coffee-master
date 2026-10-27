@@ -1418,6 +1418,251 @@
         "【打发不消泡奶盖】室温软化芝士60g加海盐2.5g、炼乳30g与牛奶60ml用均质机打至完全无颗粒，倒入4℃冷藏淡奶油250ml，中高速打发2.5分钟至酸奶般浓稠拉起小弯钩（7成发），冷藏可稳存24小时。"
       ],
       "hot_400ml_adjustment": "珍珠恒温55℃保温；奶盖4℃冷藏随用随取。"
+    },
+    {
+      "id": "custom_bev_25_profit",
+      "category": "light_milk_tea",
+      "name": "【高毛利供应链平替版】霸王茶姬 晴山栖谷",
+      "positioning": "联网实时拆解爆款",
+      "flavor_profile": "源自全网实时拆解配方：霸王茶姬 晴山栖谷 黄金茶乳果香配比",
+      "base_size_ml": 500,
+      "sugar_levels_g": {
+        "标准糖(10分)": 25,
+        "七分糖(推荐)": 18,
+        "五分糖": 12,
+        "三分糖": 6
+      },
+      "bom_cost_cny": {
+        "raw_materials": 1.83,
+        "packaging": 0.7,
+        "total_cost": 2.53,
+        "suggested_retail": 12.0,
+        "gross_margin_pct": 78.9
+      },
+      "ingredients_500ml_iced": [
+        {
+          "item": "高香茉莉绿茶汤",
+          "amount": 200.0,
+          "unit": "ml",
+          "cost": 0.36
+        },
+        {
+          "item": "巴氏鲜牛奶",
+          "amount": 120.0,
+          "unit": "ml",
+          "cost": 1.32
+        },
+        {
+          "item": "黄金果糖",
+          "amount": 18.0,
+          "unit": "g",
+          "cost": 0.12
+        },
+        {
+          "item": "机制方冰",
+          "amount": 150.0,
+          "unit": "g",
+          "cost": 0.03
+        }
+      ],
+      "sop_steps": [
+        "1. 备料打底：出品杯或雪克杯中依次加入风味基底、乳品/果浆与标准果糖。",
+        "2. 冰温调谐：注入现萃冷藏茶汤/咖啡液，铲入机制方冰至标准刻度线。",
+        "3. 融合出杯：盖紧雪克杯快速摇晃10-12次充分乳化锁香，倒入高透出品杯封口贴标。"
+      ],
+      "hot_400ml_adjustment": "热饮转换：去冰，茶汤与乳品混合后用蒸汽棒加热至62℃-65℃出品。",
+      "persisted_to_db": "D:\\presonal-learning\\learn-2026\\tea-coffee-master\\data\\beverages_db.json"
+    },
+    {
+      "id": "custom_bev_27_profit",
+      "category": "light_milk_tea",
+      "name": "【高毛利供应链平替版】霸王茶姬 晴山栖谷",
+      "positioning": "联网实时拆解爆款",
+      "flavor_profile": "这些孢子粉还只能以 原料 形式贱卖;如今,一克破壁孢子粉的身价,抵得上过去一斤。工作人员采集灵芝孢子粉。金寨县委宣传部供图灵芝孢子粉的翻身,是金寨...",
+      "base_size_ml": 500,
+      "sugar_levels_g": {
+        "标准糖(10分)": 25,
+        "七分糖(推荐)": 18,
+        "五分糖": 12,
+        "三分糖": 6
+      },
+      "bom_cost_cny": {
+        "raw_materials": 1.75,
+        "packaging": 0.7,
+        "total_cost": 2.45,
+        "suggested_retail": 12.0,
+        "gross_margin_pct": 79.6
+      },
+      "ingredients_500ml_iced": [
+        {
+          "item": "高香原叶茶汤",
+          "amount": 200.0,
+          "unit": "ml",
+          "cost": 0.4
+        },
+        {
+          "item": "玄米风味辅料",
+          "amount": 20.0,
+          "unit": "g",
+          "cost": 0.1
+        },
+        {
+          "item": "巴氏鲜牛奶",
+          "amount": 100.0,
+          "unit": "ml",
+          "cost": 1.1
+        },
+        {
+          "item": "黄金果糖",
+          "amount": 18.0,
+          "unit": "g",
+          "cost": 0.12
+        },
+        {
+          "item": "机制方冰",
+          "amount": 150.0,
+          "unit": "g",
+          "cost": 0.03
+        }
+      ],
+      "sop_steps": [
+        "1. 备料打底：出品杯或雪克杯中依次加入风味基底、乳品/果浆与标准果糖。",
+        "2. 冰温调谐：注入现萃冷藏茶汤/咖啡液，铲入机制方冰至标准刻度线。",
+        "3. 融合出杯：盖紧雪克杯快速摇晃10-12次充分乳化锁香，倒入高透出品杯封口贴标。"
+      ],
+      "hot_400ml_adjustment": "热饮转换：去冰，茶汤与乳品混合后用蒸汽棒加热至62℃-65℃出品。",
+      "persisted_to_db": "D:\\presonal-learning\\learn-2026\\tea-coffee-master\\data\\beverages_db.json"
+    },
+    {
+      "id": "custom_bev_28",
+      "category": "light_milk_tea",
+      "name": "霸王茶姬 晴山栖谷",
+      "positioning": "联网实时拆解爆款",
+      "flavor_profile": "#夏日饮品 #奶茶原材料供应商 #健康饮品 #自制饮品 霸王茶姬同款晴山栖谷，茶底 黄茶到货啦 1比1复配出来的，茶感，风味相似度达到90% 这款谷香黄茶结合了黄大茶与烤谷物炒香的玄米经过复杂工艺炒茶，烘而成，又独特的炒米香和锅巴香，搭配奶",
+      "base_size_ml": 500,
+      "sugar_levels_g": {
+        "标准糖(10分)": 25,
+        "七分糖(推荐)": 18,
+        "五分糖": 12,
+        "三分糖": 6
+      },
+      "bom_cost_cny": {
+        "raw_materials": 1.85,
+        "packaging": 0.8,
+        "total_cost": 2.65,
+        "suggested_retail": 12.0,
+        "gross_margin_pct": 77.9
+      },
+      "ingredients_500ml_iced": [
+        {
+          "item": "冷萃黄大茶茶汤",
+          "amount": 200.0,
+          "unit": "ml",
+          "cost": 0.4
+        },
+        {
+          "item": "黄茶风味辅料",
+          "amount": 20.0,
+          "unit": "g",
+          "cost": 0.1
+        },
+        {
+          "item": "玄米风味辅料",
+          "amount": 20.0,
+          "unit": "g",
+          "cost": 0.1
+        },
+        {
+          "item": "巴氏鲜牛奶",
+          "amount": 100.0,
+          "unit": "ml",
+          "cost": 1.1
+        },
+        {
+          "item": "黄金果糖",
+          "amount": 18.0,
+          "unit": "g",
+          "cost": 0.12
+        },
+        {
+          "item": "机制方冰",
+          "amount": 150.0,
+          "unit": "g",
+          "cost": 0.03
+        }
+      ],
+      "sop_steps": [
+        "1. 备料打底：出品杯或雪克杯中依次加入风味基底、乳品/果浆与标准果糖。",
+        "2. 冰温调谐：注入现萃冷藏茶汤/咖啡液，铲入机制方冰至标准刻度线。",
+        "3. 融合出杯：盖紧雪克杯快速摇晃10-12次充分乳化锁香，倒入高透出品杯封口贴标。"
+      ],
+      "hot_400ml_adjustment": "热饮转换：去冰，茶汤与乳品混合后用蒸汽棒加热至62℃-65℃出品。"
+    },
+    {
+      "id": "custom_bev_28_profit",
+      "category": "light_milk_tea",
+      "name": "【高毛利供应链平替版】霸王茶姬 晴山栖谷",
+      "positioning": "联网实时拆解爆款",
+      "flavor_profile": "#夏日饮品 #奶茶原材料供应商 #健康饮品 #自制饮品 霸王茶姬同款晴山栖谷，茶底 黄茶到货啦 1比1复配出来的，茶感，风味相似度达到90% 这款谷香黄茶结合了黄大茶与烤谷物炒香的玄米经过复杂工艺炒茶，烘而成，又独特的炒米香和锅巴香，搭配奶",
+      "base_size_ml": 500,
+      "sugar_levels_g": {
+        "标准糖(10分)": 25,
+        "七分糖(推荐)": 18,
+        "五分糖": 12,
+        "三分糖": 6
+      },
+      "bom_cost_cny": {
+        "raw_materials": 1.85,
+        "packaging": 0.7,
+        "total_cost": 2.55,
+        "suggested_retail": 12.0,
+        "gross_margin_pct": 78.8
+      },
+      "ingredients_500ml_iced": [
+        {
+          "item": "冷萃黄大茶茶汤",
+          "amount": 200.0,
+          "unit": "ml",
+          "cost": 0.4
+        },
+        {
+          "item": "黄茶风味辅料",
+          "amount": 20.0,
+          "unit": "g",
+          "cost": 0.1
+        },
+        {
+          "item": "玄米风味辅料",
+          "amount": 20.0,
+          "unit": "g",
+          "cost": 0.1
+        },
+        {
+          "item": "巴氏鲜牛奶",
+          "amount": 100.0,
+          "unit": "ml",
+          "cost": 1.1
+        },
+        {
+          "item": "黄金果糖",
+          "amount": 18.0,
+          "unit": "g",
+          "cost": 0.12
+        },
+        {
+          "item": "机制方冰",
+          "amount": 150.0,
+          "unit": "g",
+          "cost": 0.03
+        }
+      ],
+      "sop_steps": [
+        "1. 备料打底：出品杯或雪克杯中依次加入风味基底、乳品/果浆与标准果糖。",
+        "2. 冰温调谐：注入现萃冷藏茶汤/咖啡液，铲入机制方冰至标准刻度线。",
+        "3. 融合出杯：盖紧雪克杯快速摇晃10-12次充分乳化锁香，倒入高透出品杯封口贴标。"
+      ],
+      "hot_400ml_adjustment": "热饮转换：去冰，茶汤与乳品混合后用蒸汽棒加热至62℃-65℃出品。",
+      "persisted_to_db": "D:\\presonal-learning\\learn-2026\\tea-coffee-master\\data\\beverages_db.json"
     }
   ]
 }
