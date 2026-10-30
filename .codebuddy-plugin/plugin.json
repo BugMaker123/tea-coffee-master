@@ -2,8 +2,8 @@
   "name": "tea-coffee-master",
   "version": "3.0.0",
   "description": "商用与专业级奶茶、果茶、咖啡研发与制作大师 v3.0（动态联网拆解新品 + BOM成本组装 + 降本/低卡/摆摊极速优化 + 自进化引擎）。内置可执行CLI精算引擎、爆款连锁配方库与交互式吧台SOP生成器。",
-  "description_zh": "商用与专业级奶茶、果茶、咖啡研发与制作大师 v3.0（动态联网拆解新品 + BOM成本组装 + 降本/低卡/摆摊极速优化 + 自进化引擎）。内置可执行CLI精算与联网引擎(scripts/beverage_engine.py)、爆款连锁结构化配方库(data/beverages_db.json)与交互式吧台SOP生成器。",
-  "description_en": "Commercial Milk Tea, Fruit Tea, and Specialty Coffee Formulation & BOM Costing Expert Plugin (v3.0). Features a dynamic closed-loop CLI engine for live chain-brand drink teardown fetching, 500ml/700ml ml/g standardization, BOM cost & delivery margin calculation, and interactive HTML barista portal generation.",
+  "description_zh": "支持全网实时拆解霸王茶姬/喜茶/瑞幸当季新品、500ml/700ml商用克重标准化、单杯BOM成本与外卖扣点净利精算，以及夜市15秒极速出杯优化。",
+  "description_en": "Commercial Beverage R&D & BOM Costing Expert Plugin with live chain-brand drink teardown, 500ml/700ml SOP standardization, and delivery margin calculation.",
   "author": {
     "name": "BugMaker123",
     "email": "bugmaker123@users.noreply.github.com"
@@ -25,14 +25,14 @@
     "zh": "茶饮咖啡研发与BOM精算专家"
   },
   "displayDescription": {
-    "en": "Live chain-brand beverage teardown, 500ml/700ml commercial SOP formulation, single-cup BOM cost & delivery platform margin calculation, supply-chain cost reduction, and 15-second street-stall workflow optimization.",
-    "zh": "支持全网实时拆解霸王茶姬/喜茶/瑞幸/古茗等当季新品配方、自动标准化为500ml/700ml冷热双版商用克重(ml/g)、精准核算单杯BOM成本与美团/饿了么扣点净利、一键执行【供应链平替降本/0糖低卡改造/夜市15秒极速出杯SOP重构】，直出可贴墙打印的交互式吧台SOP系统。"
+    "en": "Live chain-brand drink teardowns, 500ml/700ml commercial SOPs, BOM cost & delivery margin calculation, and 15s stall optimization.",
+    "zh": "支持全网实时拆解霸王茶姬/喜茶/瑞幸当季新品配方、标准化为500ml/700ml商用克重(ml/g)、核算BOM成本与外卖毛利，并提供摆摊极速SOP。"
   },
   "avatar": "avatars/tea-coffee-master.png",
   "categoryId": "12-IndustryConsultant",
   "defaultInitPrompt": {
-    "zh": "帮我联网拆解霸王茶姬新品『晴山栖谷』的500ml商用复刻配方，核算单杯BOM成本与毛利率，并给出高毛利供应链平替方案。",
-    "en": "Fetch and reverse-engineer the 500ml commercial formula for Chagee's new drink 'Qingshan Xigu', calculate single-cup BOM cost and gross margin, and provide a supply-chain cost-reduction plan."
+    "zh": "帮我联网拆解霸王茶姬新品『晴山栖谷』的500ml商用复刻配方，并做高毛利供应链平替。",
+    "en": "Reverse-engineer Chagee's 'Qingshan Xigu' 500ml commercial formula and optimize for higher gross margin."
   },
   "plugin": "tea-coffee-master",
   "tags": [
@@ -46,11 +46,7 @@
     },
     {
       "en": "BOM Cost & Margin",
-      "zh": "BOM成本与外卖毛利"
-    },
-    {
-      "en": "Street Stall 15s Workflow",
-      "zh": "摆摊极速出杯"
+      "zh": "BOM成本与毛利"
     }
   ],
   "quickPrompts": [
@@ -65,10 +61,6 @@
     {
       "zh": "帮我核算『杨枝甘露』定价16元、美团外卖扣点22%、日销150杯时的真实净利率与回本周期。",
       "en": "Calculate the net profit margin and payback period for Mango Pomelo Sago at 16 CNY with 22% delivery platform fee and 150 cups/day."
-    },
-    {
-      "zh": "如何制作不分层、不苦涩的『橙C冰美式』和防絮凝的『柠檬轻乳茶』？请给出精确ml/g配比与萃茶参数。",
-      "en": "How to make non-bitter Orange Iced Americano and curdling-free Lemon Milk Tea? Provide exact ml/g ratios and brewing parameters."
     }
   ]
 }
