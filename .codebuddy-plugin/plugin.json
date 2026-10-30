@@ -1,0 +1,26 @@
+{
+  "name": "tea-coffee-master",
+  "version": "3.0.0",
+  "display_name": "商用茶饮与精品咖啡研发精算大师",
+  "display_name_en": "Tea & Coffee Master Pro: Commercial Beverage R&D & BOM Engine",
+  "description": "商用与专业级奶茶、果茶、咖啡研发与制作大师 v3.0（动态联网拆解新品 + BOM成本组装 + 降本/低卡/摆摊极速优化 + 自进化引擎）。内置可执行CLI精算引擎、爆款连锁配方库与交互式吧台SOP生成器。",
+  "description_zh": "商用与专业级奶茶、果茶、咖啡研发与制作大师 v3.0（动态联网拆解新品 + BOM成本组装 + 降本/低卡/摆摊极速优化 + 自进化引擎）。内置可执行CLI精算与联网引擎(scripts/beverage_engine.py)、爆款连锁结构化配方库(data/beverages_db.json)与交互式吧台SOP/外卖防亏本精算HTML生成器。支持实时联网搜索霸王茶姬/喜茶/瑞幸/古茗等当季新品拆解配方、自动将模糊单位标准化为500ml/700ml精准商用克重并核算毛利率、一键执行【供应链平替降本/0糖低卡改造/夜市15秒极速出杯SOP重构】。",
+  "description_en": "Commercial Milk Tea, Fruit Tea, and Specialty Coffee Formulation & BOM Costing Expert Plugin (v3.0). Features a dynamic closed-loop CLI engine for live chain-brand drink teardown fetching, 500ml/700ml ml/g standardization, BOM cost & delivery platform margin calculation, supply-chain cost reduction, low-calorie reformulation, 15-second street-stall SOP optimization, and interactive HTML barista portal generation.",
+  "author": {
+    "name": "BugMaker123",
+    "email": "bugmaker123@users.noreply.github.com",
+    "url": "https://github.com/BugMaker123"
+  },
+  "repository": "https://github.com/BugMaker123/tea-coffee-master",
+  "homepage": "https://github.com/BugMaker123/tea-coffee-master",
+  "license": "MIT",
+  "keywords": [
+    "milk-tea",
+    "coffee",
+    "beverage-formulation",
+    "barista-sop",
+    "bom-cost",
+    "boba",
+    "fruit-tea"
+  ]
+}
